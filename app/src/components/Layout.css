@@ -61,6 +61,86 @@
   padding: 1.5rem;
 }
 
+.alat-saring {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.alat-saring input,
+.alat-saring select {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #d1d5da;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.alat-saring input:focus,
+.alat-saring select:focus {
+  border-color: #0366d6;
+  outline: none;
+}
+
+.daftar-kartu-buku {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.kartu-buku {
+  background: #ffffff;
+  border: 1px solid #e1e4e8;
+  border-radius: 8px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  transition: box-shadow 0.2s;
+}
+
+.kartu-buku:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.kartu-buku h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.kartu-buku h3 a {
+  color: #0366d6;
+  text-decoration: none;
+}
+
+.kartu-buku h3 a:hover {
+  text-decoration: underline;
+}
+
+.kategori-buku {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #586069;
+}
+
+.detail-singkat {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #24292e;
+}
+
+.badge-status {
+  align-self: flex-start;
+  display: inline-block;
+  font-size: 0.75rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 12px;
+  background-color: #f1f8ff;
+  color: #0366d6;
+  font-weight: 500;
+  margin-top: 0.5rem;
+}
+
 .kaki {
   display: flex;
   justify-content: space-between;
@@ -83,9 +163,12 @@
     gap: 0.5rem;
   }
 
+  .daftar-kartu-buku {
+    grid-template-columns: 1fr;
+  }
+
   .kaki {
     flex-direction: column;
     gap: 0.5rem;
   }
 }
-

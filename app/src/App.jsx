@@ -1,30 +1,10 @@
-import { Route, Routes, Link, useParams, useNavigate } from 'react-router-dom'
+import { Route, Routes, useParams, useNavigate } from 'react-router-dom'
 import { KoleksiProvider } from './context/KoleksiProvider.jsx'
 import Layout from './components/Layout.jsx'
-import useKoleksi from './hooks/useKoleksi.js'
 import Beranda from './pages/Beranda.jsx'
+import Koleksi from './pages/Koleksi.jsx'
 import Tentang from './pages/Tentang.jsx'
 import TidakDitemukan from './pages/TidakDitemukan.jsx'
-
-function Koleksi() {
-  const { items, loading } = useKoleksi()
-  return (
-    <section>
-      <h1>Daftar Koleksi Buku</h1>
-      {loading ? (
-        <p>Memuat data buku...</p>
-      ) : (
-        <ul>
-          {items.map((buku) => (
-            <li key={buku.id}>
-              <Link to={`/koleksi/${buku.id}`}>{buku.judul}</Link> - {buku.kategori}
-            </li>
-          ))}
-        </ul>
-      )}
-    </section>
-  )
-}
 
 function Detail() {
   const { id } = useParams()
