@@ -2,27 +2,9 @@ import { Route, Routes, Link, useParams, useNavigate } from 'react-router-dom'
 import { KoleksiProvider } from './context/KoleksiProvider.jsx'
 import Layout from './components/Layout.jsx'
 import useKoleksi from './hooks/useKoleksi.js'
-
-function Beranda() {
-  const { items, loading } = useKoleksi()
-  const daftarKategori = [...new Set(items.map((buku) => buku.kategori))]
-  const totalBuku = items.reduce((total) => total + 1, 0)
-
-  return (
-    <section>
-      <h1>Rak Buku Pribadi</h1>
-      <p>Selamat datang di aplikasi pengelolaan rak buku koleksi pribadi.</p>
-      {loading ? (
-        <p>Memuat ringkasan buku...</p>
-      ) : (
-        <p>
-          Tersedia {totalBuku} koleksi buku dalam {daftarKategori.length} kategori.
-        </p>
-      )}
-      <Link to="/koleksi">Lihat Koleksi Buku</Link>
-    </section>
-  )
-}
+import Beranda from './pages/Beranda.jsx'
+import Tentang from './pages/Tentang.jsx'
+import TidakDitemukan from './pages/TidakDitemukan.jsx'
 
 function Koleksi() {
   const { items, loading } = useKoleksi()
@@ -72,25 +54,6 @@ function Statistik() {
     <section>
       <h1>Statistik Koleksi</h1>
       <p>Tabel statistik sedang disiapkan.</p>
-    </section>
-  )
-}
-
-function Tentang() {
-  return (
-    <section>
-      <h1>Tentang Mahasiswa</h1>
-      <p>Informasi mahasiswa sedang disiapkan.</p>
-    </section>
-  )
-}
-
-function TidakDitemukan() {
-  return (
-    <section>
-      <h1>404</h1>
-      <p>Halaman tidak ditemukan.</p>
-      <Link to="/">Kembali ke Beranda</Link>
     </section>
   )
 }
