@@ -1,10 +1,82 @@
 [
   {
     "id": "1",
-    "judul": "Contoh item pertama",
-    "kategori": "Contoh",
-    "fieldTema1": "ganti sesuai field tema",
-    "fieldTema2": 0,
-    "fieldTema3": "ganti sesuai field tema"
+    "judul": "Laskar Pelangi",
+    "kategori": "Novel",
+    "penulis": "Andrea Hirata",
+    "tahunTerbit": 2005,
+    "status": "dimiliki"
+  },
+  {
+    "id": "2",
+    "judul": "Bumi Manusia",
+    "kategori": "Novel",
+    "penulis": "Pramoedya Ananta Toer",
+    "tahunTerbit": 1980,
+    "status": "dimiliki"
+  },
+  {
+    "id": "3",
+    "judul": "Clean Code",
+    "kategori": "Teknologi",
+    "penulis": "Robert C. Martin",
+    "tahunTerbit": 2008,
+    "status": "sedang dibaca"
+  },
+  {
+    "id": "4",
+    "judul": "Struktur Data dan Algoritma",
+    "kategori": "Teknologi",
+    "penulis": "Rinaldi Munir",
+    "tahunTerbit": 2012,
+    "status": "dimiliki"
+  },
+  {
+    "id": "5",
+    "judul": "Sejarah Dunia yang Disembunyikan",
+    "kategori": "Sejarah",
+    "penulis": "Jonathan Black",
+    "tahunTerbit": 2007,
+    "status": "ingin dibeli"
+  },
+  {
+    "id": "6",
+    "judul": "Nusantara Sejarah Indonesia",
+    "kategori": "Sejarah",
+    "penulis": "Bernard H.M. Vlekke",
+    "tahunTerbit": 2008,
+    "status": "dimiliki"
+  },
+  {
+    "id": "7",
+    "judul": "One Piece Volume 100",
+    "kategori": "Komik",
+    "penulis": "Eiichiro Oda",
+    "tahunTerbit": 2021,
+    "status": "dimiliki"
+  },
+  {
+    "id": "8",
+    "judul": "Detektif Conan Kasus 99",
+    "kategori": "Komik",
+    "penulis": "Gosho Aoyama",
+    "tahunTerbit": 2021,
+    "status": "sedang dibaca"
+  },
+  {
+    "id": "9",
+    "judul": "Filosofi Teras",
+    "kategori": "Novel",
+    "penulis": "Henry Manampiring",
+    "tahunTerbit": 2018,
+    "status": "dimiliki"
+  },
+  {
+    "id": "10",
+    "judul": "Dasar Pemrograman JavaScript",
+    "kategori": "Teknologi",
+    "penulis": "Budi Raharjo",
+    "tahunTerbit": 2019,
+    "status": "ingin dibeli"
   }
 ]
