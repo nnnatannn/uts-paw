@@ -1,0 +1,91 @@
+#aplikasi-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#header-utama {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e1e4e8;
+}
+
+.judul-aplikasi {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #24292e;
+}
+
+.menu-navigasi {
+  display: flex;
+  gap: 1rem;
+}
+
+.tautan-nav {
+  text-decoration: none;
+  color: #586069;
+  font-size: 0.95rem;
+  padding: 0.35rem 0.65rem;
+  border-radius: 6px;
+  transition: color 0.2s, background-color 0.2s;
+}
+
+.tautan-nav:hover {
+  color: #0366d6;
+  background-color: #f6f8fa;
+}
+
+.tautan-nav:focus {
+  outline: 2px solid #0366d6;
+  outline-offset: 2px;
+}
+
+.tautan-nav:active {
+  transform: translateY(1px);
+}
+
+.tautan-nav.active {
+  color: #0366d6;
+  font-weight: 600;
+  background-color: #f1f8ff;
+}
+
+#konten-utama {
+  flex: 1;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.kaki {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  border-top: 1px solid #e1e4e8;
+  color: #6a737d;
+  font-size: 0.85rem;
+  background-color: #fafbfc;
+}
+
+@media (max-width: 768px) {
+  #header-utama {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .menu-navigasi {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .kaki {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
