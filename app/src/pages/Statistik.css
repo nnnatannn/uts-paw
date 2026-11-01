@@ -1,0 +1,50 @@
+.halaman-statistik {
+  max-width: 680px;
+}
+
+.tabel-kontainer {
+  overflow-x: auto;
+  margin-top: 1.5rem;
+}
+
+.tabel-statistik {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  border: 1px solid #e1e4e8;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.tabel-statistik th,
+.tabel-statistik td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e1e4e8;
+  text-align: left;
+}
+
+.tabel-statistik thead th {
+  background-color: #f6f8fa;
+  font-weight: 600;
+  color: #24292e;
+}
+
+.tabel-statistik tbody tr:hover {
+  background-color: #f6f8fa;
+}
+
+.tabel-statistik tfoot td,
+.tabel-statistik tfoot th {
+  border-top: 2px solid #24292e;
+  font-weight: 700;
+  color: #24292e;
+}
+
+@media (max-width: 480px) {
+  .tabel-statistik th,
+  .tabel-statistik td {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+  }
+}
+
