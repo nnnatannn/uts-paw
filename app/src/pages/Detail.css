@@ -1,0 +1,73 @@
+.halaman-detail {
+  max-width: 680px;
+}
+
+.daftar-rincian {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.65rem 1.5rem;
+  margin: 1.5rem 0;
+  padding: 1rem 1.25rem;
+  background-color: #ffffff;
+  border: 1px solid #e1e4e8;
+  border-radius: 8px;
+}
+
+.daftar-rincian dt {
+  font-weight: 600;
+  color: #24292e;
+}
+
+.daftar-rincian dd {
+  margin: 0;
+  color: #444d56;
+}
+
+.badge-detail-status {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  background-color: #f1f8ff;
+  color: #0366d6;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.aksi-detail {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.tombol-hapus {
+  padding: 0.55rem 1.2rem;
+  background-color: #d73a49;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.tombol-hapus:hover {
+  background-color: #cb2431;
+}
+
+.tombol-hapus:focus {
+  outline: 2px solid #cb2431;
+  outline-offset: 2px;
+}
+
+.tautan-kembali {
+  text-decoration: none;
+  color: #586069;
+  font-size: 0.95rem;
+}
+
+.tautan-kembali:hover {
+  text-decoration: underline;
+  color: #0366d6;
+}
+
