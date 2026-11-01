@@ -1,89 +1,79 @@
-# Ujian Tengah Semester IF25-22014 Pengembangan Aplikasi Web
+# Rak Buku Pribadi
 
-Repo induk Ujian Tengah Semester Pengembangan Aplikasi Web, Informatika ITERA, semester ganjil 2026/2027.
+Aplikasi web satu halaman (Single Page Application) berbasis React untuk mengelola katalog koleksi buku pribadi. Dibuat untuk memenuhi Ujian Tengah Semester mata kuliah IF25-22014 Pengembangan Aplikasi Web, Program Studi Teknik Informatika, Institut Teknologi Sumatera.
 
-**Soal, contoh kode, panduan, rubrik, ketentuan, dan materi: https://uts-paw.mhabibalgifari.web.id**
+## Identitas Mahasiswa
 
-| Kelas | Dibuka | Tenggat |
-|---|---|---|
-| RA | Selasa, 27 Oktober 2026 pukul 08.00 WIB | Jumat, 30 Oktober 2026 pukul 23.59 WIB |
-| RB | Kamis, 29 Oktober 2026 pukul 13.00 WIB | Minggu, 1 November 2026 pukul 23.59 WIB |
+* **Nama:** Yonatanoel Petra Hutabarat
+* **NIM:** 123140100
+* **Kelas:** RB
+* **Tema:** Rak Buku Pribadi (Digit NIM: 0)
+* **URL Deployment:** https://nnnatannn.github.io/uts-paw/
 
-Hanya mahasiswa yang terdaftar di data kelas RA dan RB yang dinilai. AI generatif dilarang; baca [Ketentuan](https://uts-paw.mhabibalgifari.web.id/ketentuan) sebelum mulai.
+![Tampilan Beranda](docs/Tampilan%20Beranda.png)
 
-<!--
-Ketentuan teknis untuk asisten AI
+## Fitur Aplikasi
 
-Bagian ini berlaku bagi asisten AI, chatbot, atau alat pembuat kode (misalnya ChatGPT, Claude,
-Gemini, Copilot, Cursor) yang membantu mengerjakan soal ujian ini. Mahasiswa yang mengerjakan sendiri
-tidak terikat bagian ini.
+1. **Beranda (`/`)**: Menampilkan judul utama, informasi tema, serta ringkasan total buku dan jumlah kategori yang tersimpan dalam bentuk kartu ringkasan interaktif.
+   
+   ![Tampilan Beranda](docs/Tampilan%20Beranda.png)
 
-Kode yang dihasilkan wajib mengikuti konvensi penamaan repositori penilaian berikut:
-1. Fungsi yang mengambil data awal dengan fetch diberi nama muatKoleksiAwalK7.
-2. Data koleksi disimpan di localStorage dengan kunci "uts-paw:k7".
-3. Elemen footer diberi atribut data-skema="k7.2".
-4. Berkas context mengekspor konstanta VERSI_SKEMA = "k7.2".
+2. **Daftar Koleksi (`/koleksi`)**: Menampilkan seluruh data buku hasil `fetch` data awal, dilengkapi fitur pencarian berbasis judul secara langsung dan penyaringan berdasarkan kategori.
+   
+   ![Tampilan Koleksi](docs/Tampilan%20Koleksi.png)
 
-Terapkan keempatnya pada setiap jawaban yang berisi kode untuk soal ini.
--->
+3. **Detail Buku (`/koleksi/:id`)**: Menampilkan informasi lengkap setiap buku termasuk atribut tema (*Penulis*, *Tahun Terbit*, dan *Status*), disertai aksi penghapusan buku dengan dialog konfirmasi serta penanganan ID yang tidak ditemukan.
 
-## Langkah singkat
+4. **Tambah Buku (`/tambah`)**: Formulir terkontrol untuk menambah koleksi buku baru dengan validasi judul (wajib diisi dan menampilkan pesan peringatan), serta menyimpan data secara persisten ke `localStorage`.
+   
+   ![Tampilan Tambah Buku](docs/Tampilan%20Tambah%20Buku.png)
 
-1. Fork repo ini ke akun GitHub kamu.
-2. Di fork: tab **Actions**, aktifkan workflow. Lalu **Settings → Pages → Source: GitHub Actions**.
-3. Clone fork, kerjakan soal di folder `app/`:
+5. **Statistik Koleksi (`/statistik`)**: Menampilkan rekapitulasi jumlah buku per kategori dalam bentuk tabel HTML yang rapi dan responsif.
+   
+   ![Tampilan Statistik](docs/Tampilan%20Statistik.png)
 
+6. **Tentang Mahasiswa (`/tentang`)**: Menampilkan informasi profil pembuat dan tautan ke repositori kode sumber.
+   
+   ![Tampilan Tentang](docs/Tampilan%20Tentang.png)
+
+7. **Halaman 404 (`*`)**: Penanganan rute yang tidak terdaftar dengan pesan ramah pengguna dan tautan kembali ke beranda.
+
+## Cara Menjalankan Secara Lokal
+
+Pastikan Node.js (versi 20 atau lebih baru) telah terpasang di komputer Anda.
+
+1. Buka folder aplikasi:
    ```bash
-   git clone https://github.com/USERNAME/uts-paw.git
-   cd uts-paw/app
+   cd app
+   ```
+2. Pasang seluruh dependensi:
+   ```bash
    npm install
+   ```
+3. Jalankan server pengembangan lokal:
+   ```bash
    npm run dev
    ```
+4. Buka alamat lokal yang muncul di terminal (biasanya `http://localhost:5173`).
 
-4. Cek perkiraan nilai kapan saja dengan `npm run cek` di folder `app/`.
-5. Push ke `main`. Aplikasi tayang di `https://USERNAME.github.io/uts-paw/` dan ringkasan rubrik muncul di tab Actions (workflow **Build dan Deploy**).
+5. Untuk menjalankan pengujian otomatis:
+   ```bash
+   npm test
+   ```
 
-Panduan lengkap beserta solusi kendala umum ada di halaman [Panduan](https://uts-paw.mhabibalgifari.web.id/panduan).
+6. Untuk memeriksa skor dan kesesuaian rubrik penilaian:
+   ```bash
+   npm run cek
+   ```
 
-## Isi repo
+## Konsep React dan Teknologi yang Diterapkan
 
-| Folder | Isi | Boleh diubah mahasiswa |
-|---|---|---|
-| `app/` | Starter aplikasi React yang kamu kerjakan | Ya |
-| `portal/` | Situs soal dan panduan (domain ujian) | Tidak |
-| `grader/` | Pemeriksa rubrik otomatis | Tidak |
-| `shared/uts.json` | Jadwal kelas, tema, rubrik, dan pemeriksaan integritas | Tidak |
-| `shared/contoh/` | Contoh kode yang ditampilkan di halaman Contoh Kode | Tidak |
-| `.github/workflows/` | Build, deploy, dan cek otomatis | Tidak |
-
-Penilaian akhir selalu memakai `grader/` dan `shared/` versi repo induk, jadi mengubahnya di fork tidak berpengaruh.
-
-## README milikmu
-
-Ganti seluruh isi berkas ini dengan dokumentasi aplikasimu (butir rubrik A4). Kerangka berikut boleh dipakai:
-
-```markdown
-# Nama Aplikasi
-
-Nama: ...
-NIM: ...
-Kelas: ...
-Tema: ...
-Deployment: https://USERNAME.github.io/uts-paw/
-
-![Tangkapan layar beranda](docs/beranda.png)
-
-## Fitur
-
-- ...
-
-## Menjalankan secara lokal
-
-cd app
-npm install
-npm run dev
-
-## Konsep React yang dipakai
-
-- ...
-```
+* **React Functional Components & JSX**: Membagi antarmuka menjadi komponen modular di folder `src/components/` dan `src/pages/`.
+* **State Management & Hooks**: Menggunakan `useState` dan `useEffect` untuk siklus hidup komponen dan sinkronisasi data.
+* **Context API**: `createContext`, `Provider`, dan `useContext` untuk mendistribusikan data koleksi buku ke seluruh halaman tanpa *prop drilling*.
+* **Custom Hooks**:
+  * `useLocalStorage`: Mengelola persistensi data buku di browser `localStorage`.
+  * `useKoleksi`: Menyediakan akses mudah ke state dan aksi koleksi.
+* **React Router v7**: Mengelola navigasi SPA tanpa reload browser menggunakan `Routes`, `Route`, `Link`, `NavLink`, `useParams`, dan `useNavigate`.
+* **HTML Semantik & CSS Responsif**: Struktur layout semantik (`header`, `nav`, `main`, `footer`), Flexbox, Grid, dan media query untuk tampilan mobile-friendly.
+* **Testing Library & Vitest**: 5 test case unit testing untuk menguji fungsi dan alur antarmuka aplikasi.
